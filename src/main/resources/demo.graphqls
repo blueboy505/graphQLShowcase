@@ -1,0 +1,14 @@
+type Query {
+    characters: [Character]
+    character(name: String): Character
+}
+
+type Character {
+    name: String
+    description: String
+    appearsIn: [Episode]
+}
+
+type Episode {
+    name: String
+}

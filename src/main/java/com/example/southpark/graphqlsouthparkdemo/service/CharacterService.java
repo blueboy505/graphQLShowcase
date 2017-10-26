@@ -31,12 +31,19 @@ public class CharacterService {
         return characters.stream().map(character -> toModel(character)).collect(Collectors.toList());
     }
 
+    public Character getCharactersWithName(String name) {
+        com.example.southpark.graphqlsouthparkdemo.dao.Character daoCharacter = characterRepository.findByName(name);
+        return toModel(daoCharacter);
+    }
+
     public Character toModel(com.example.southpark.graphqlsouthparkdemo.dao.Character daoCharacter) {
         Character model = new Character();
-        model.setDescription(daoCharacter.getDescription());
-        model.setName(daoCharacter.getName());
-        if(!StringUtils.isEmpty(daoCharacter.getAppearsIn())) {
-            model.setAppearsIn((Arrays.stream(daoCharacter.getAppearsIn().split(",")).map(s -> episodeRepository.findOne(s).toModel())).collect(Collectors.toList()));
+        if(daoCharacter != null) {
+            model.setDescription(daoCharacter.getDescription());
+            model.setName(daoCharacter.getName());
+            if (!StringUtils.isEmpty(daoCharacter.getAppearsIn())) {
+                model.setAppearsIn((Arrays.stream(daoCharacter.getAppearsIn().split(",")).map(s -> episodeRepository.findOne(s).toModel())).collect(Collectors.toList()));
+            }
         }
         return model;
     }
