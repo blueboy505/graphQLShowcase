@@ -76,12 +76,12 @@ public class ImportData implements ApplicationListener<ApplicationReadyEvent> {
         allSeasons.add(populateSeason(mapper, "/static/s13.json", "13", 2009, 2010));
         allSeasons.add(populateSeason(mapper, "/static/s14.json", "14", 2010, 2011));
         allSeasons.add(populateSeason(mapper, "/static/s15.json", "15", 2011, 2012));
-//        allSeasons.add(populateSeason(mapper, "/static/s16.json", "16", 2012, 2013));
-//        allSeasons.add(populateSeason(mapper, "/static/s17.json", "17", 2013, 2014));
-//        allSeasons.add(populateSeason(mapper, "/static/s18.json", "18", 2014, 2015));
-//        allSeasons.add(populateSeason(mapper, "/static/s19.json", "19", 2015, 2016));
-//        allSeasons.add(populateSeason(mapper, "/static/s20.json", "20", 2016, 2017));
-//        allSeasons.add(populateSeason(mapper, "/static/s21.json", "21", 2017, 2018));
+        allSeasons.add(populateSeason(mapper, "/static/s16.json", "16", 2012, 2013));
+        allSeasons.add(populateSeason(mapper, "/static/s17.json", "17", 2013, 2014));
+        allSeasons.add(populateSeason(mapper, "/static/s18.json", "18", 2014, 2015));
+        allSeasons.add(populateSeason(mapper, "/static/s19.json", "19", 2015, 2016));
+        allSeasons.add(populateSeason(mapper, "/static/s20.json", "20", 2016, 2017));
+        allSeasons.add(populateSeason(mapper, "/static/s21.json", "21", 2017, 2018));
         for(Season season: allSeasons) {
             seasonService.addNewSeason(season);
         }

@@ -3,6 +3,7 @@ package com.example.southpark.graphqlsouthparkdemo.dao;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -19,6 +20,9 @@ public class Episode {
     private String name;
     private Date airDate;
 
+    @Column(length = 5000)
+    private String description;
+
     @ManyToOne
     @JoinColumn(name="season.id", nullable = false)
     private Season season;
@@ -29,6 +33,7 @@ public class Episode {
         model.setName(this.name);
         model.setId(this.id);
         model.setSeason(season.toSimpleModel());
+        model.setDescription(this.getDescription());
         return model;
     }
 }
