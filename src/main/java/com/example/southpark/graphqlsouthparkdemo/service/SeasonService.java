@@ -52,4 +52,8 @@ public class SeasonService {
         return seasonRepository.findById(id);
     }
 
+    public Season getSeasonWithName(String name) {
+        return seasonRepository.findByName(name).toModel();
+    }
+
 }
