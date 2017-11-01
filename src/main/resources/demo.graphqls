@@ -1,7 +1,11 @@
 type Query {
     characters: [Character]
     character(name: String): Character
+    seasons: [Season]
+    season(name: String): Season
 }
+
+
 
 type Character {
     name: String
@@ -10,5 +14,15 @@ type Character {
 }
 
 type Episode {
+    id: String
     name: String
+    description: String
+}
+
+type Season {
+    id: String
+    name: String
+    yearOfAiringStart: Int
+    yearOfAiringEnd: Int
+    episodes: [Episode]
 }
