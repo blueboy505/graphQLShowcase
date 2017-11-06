@@ -24,4 +24,10 @@ public class Character {
         return dao;
     }
 
+    public Character() {}
+
+    public Character(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 }

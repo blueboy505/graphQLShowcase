@@ -5,6 +5,10 @@ type Query {
     season(name: String): Season
 }
 
+type Mutation {
+    addNewCharacter(input: InputCharacter): Character!
+}
+
 type Character {
     name: String
     description: String
@@ -24,6 +28,12 @@ type Season {
     yearOfAiringStart: Int
     yearOfAiringEnd: Int
     episodes: [Episode]
+}
+
+input InputCharacter {
+    name: String
+    description: String
+    appIn: [Int]
 }
 
 scalar DateTime
