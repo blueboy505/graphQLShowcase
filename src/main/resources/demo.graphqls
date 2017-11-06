@@ -5,8 +5,6 @@ type Query {
     season(name: String): Season
 }
 
-
-
 type Character {
     name: String
     description: String
@@ -17,6 +15,7 @@ type Episode {
     id: String
     name: String
     description: String
+    airDate: DateTime
 }
 
 type Season {
@@ -26,3 +25,5 @@ type Season {
     yearOfAiringEnd: Int
     episodes: [Episode]
 }
+
+scalar DateTime
